@@ -48,7 +48,7 @@ class registerController: UIViewController {
         if(!errores){
             // crear usuario en la api
             print("nombre: ", user.name
-                + " Email: ", user.email + "Password: ", user.password)
+                + " Email: ", user.email + " Password: ", user.password)
         }else{
             print("Con errores no llegamos a ningun lado")
         }
