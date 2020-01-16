@@ -1,5 +1,5 @@
 //
-
+import Alamofire
 import UIKit
 var user = User()
 class registerController: UIViewController {
@@ -46,11 +46,26 @@ class registerController: UIViewController {
         
         
         if(!errores){
+            user.name = nameInput.text!
+            user.email = emailInput.text!
+            user.password = passwordInput.text!
+            postUser(user: user)
             // crear usuario en la api
             print("nombre: ", user.name
                 + " Email: ", user.email + " Password: ", user.password)
         }else{
             print("Con errores no llegamos a ningun lado")
+        }
+    }
+    
+    func postUser(user: User) {
+        let url = URL(string: "http://localhost:8888/APIBienestapp/public/index.php/api/register")
+        let json = ["name": user.name,
+                    "email": user.email,
+                    "password": user.password]
+        
+        Alamofire.request(url!, method: .post, parameters: json, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            print(response)
         }
     }
 }
