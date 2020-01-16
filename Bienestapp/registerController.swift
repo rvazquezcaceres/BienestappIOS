@@ -33,7 +33,7 @@ class registerController: UIViewController {
             errorEmail.isHidden = false
         }else{
             user.email = emailInput.text!
-            errorName.isHidden = true
+            errorEmail.isHidden = true
         }
         
         if(passwordInput.text!.isEmpty){
@@ -41,7 +41,7 @@ class registerController: UIViewController {
             errorPassword.isHidden = false
         }else{
             user.password = passwordInput.text!
-            errorName.isHidden = true
+            errorPassword.isHidden = true
         }
         
         
