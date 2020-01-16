@@ -13,6 +13,7 @@
 		7FEBEB7D23D0550E00D04D83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FEBEB7C23D0550E00D04D83 /* Assets.xcassets */; };
 		7FEBEB8023D0550E00D04D83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FEBEB7E23D0550E00D04D83 /* LaunchScreen.storyboard */; };
 		7FEBEB8823D0573F00D04D83 /* registerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEBEB8723D0573F00D04D83 /* registerController.swift */; };
+		7FEBEB8A23D0667800D04D83 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEBEB8923D0667800D04D83 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		7FEBEB7F23D0550E00D04D83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7FEBEB8123D0550E00D04D83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FEBEB8723D0573F00D04D83 /* registerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerController.swift; sourceTree = "<group>"; };
+		7FEBEB8923D0667800D04D83 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				7FEBEB7523D0550800D04D83 /* AppDelegate.swift */,
 				7FEBEB7723D0550800D04D83 /* loginController.swift */,
 				7FEBEB7923D0550800D04D83 /* Main.storyboard */,
+				7FEBEB8923D0667800D04D83 /* User.swift */,
 				7FEBEB8723D0573F00D04D83 /* registerController.swift */,
 				7FEBEB7C23D0550E00D04D83 /* Assets.xcassets */,
 				7FEBEB7E23D0550E00D04D83 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FEBEB8A23D0667800D04D83 /* User.swift in Sources */,
 				7FEBEB7823D0550800D04D83 /* loginController.swift in Sources */,
 				7FEBEB8823D0573F00D04D83 /* registerController.swift in Sources */,
 				7FEBEB7623D0550800D04D83 /* AppDelegate.swift in Sources */,

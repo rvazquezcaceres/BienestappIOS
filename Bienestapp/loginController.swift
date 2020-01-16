@@ -7,9 +7,9 @@
 //
 
 import UIKit
-
 class loginController: UIViewController {
 
+    @IBOutlet weak var prueba: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
