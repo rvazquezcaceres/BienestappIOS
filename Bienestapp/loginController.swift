@@ -7,6 +7,7 @@
 //
 import Alamofire
 import UIKit
+var token: String = ""
 
 class loginController: UIViewController {
 
@@ -53,12 +54,29 @@ class loginController: UIViewController {
         
     }
     func postUser(user: User) {
-        let url = URL(string: "http://localhost:8888/APIBienestapp/public/index.php/api/login")
+        let url = URL(string: "http://localhost:8888/Ruben/Bienestapp/public/index.php/api/login")
         let json = ["email": user.email,
                     "password": user.password]
         
         Alamofire.request(url!, method: .post, parameters: json, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
             print(response)
+            print(response.response!.statusCode)
+            if response.response!.statusCode == 201 {
+                self.performSegue(withIdentifier: "CorrectLogin", sender: nil)
+                var json = response.result.value as! [String: AnyObject]
+                token = json["token"] as! String
+                print(token)
+            } else {
+                
+                let alert1 = UIAlertAction(title:"Cerrar", style: UIAlertAction.Style.default) {
+                    (error) in
+                }
+                let alert = UIAlertController(title: "Error", message:
+                    "Informacion Incorrecta", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(alert1)
+                self.present(alert, animated: true, completion: nil)
+            }
         }
+        
     }
 }

@@ -59,7 +59,7 @@ class registerController: UIViewController {
     }
     
     func postUser(user: User) {
-        let url = URL(string: "http://localhost:8888/APIBienestapp/public/index.php/api/register")
+        let url = URL(string: "http://localhost:8888/Ruben/Bienestapp/public/index.php/api/register")
         let json = ["name": user.name,
                     "email": user.email,
                     "password": user.password]
