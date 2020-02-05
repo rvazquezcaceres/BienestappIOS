@@ -14,6 +14,8 @@
 		7F9CC01723E8163B001D5447 /* userController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9CC01623E8163B001D5447 /* userController.swift */; };
 		7F9CC01923E82AEE001D5447 /* changePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9CC01823E82AEE001D5447 /* changePassword.swift */; };
 		7F9CC01B23E836D5001D5447 /* mapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9CC01A23E836D5001D5447 /* mapController.swift */; };
+		7FA7080A23EADDCE0092D4DD /* RestrictController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA7080923EADDCE0092D4DD /* RestrictController.swift */; };
+		7FA7080C23EAE70F0092D4DD /* Restriction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA7080B23EAE70F0092D4DD /* Restriction.swift */; };
 		7FEBEB7623D0550800D04D83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEBEB7523D0550800D04D83 /* AppDelegate.swift */; };
 		7FEBEB7823D0550800D04D83 /* loginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEBEB7723D0550800D04D83 /* loginController.swift */; };
 		7FEBEB7B23D0550800D04D83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FEBEB7923D0550800D04D83 /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 		7F9CC01623E8163B001D5447 /* userController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userController.swift; sourceTree = "<group>"; };
 		7F9CC01823E82AEE001D5447 /* changePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changePassword.swift; sourceTree = "<group>"; };
 		7F9CC01A23E836D5001D5447 /* mapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapController.swift; sourceTree = "<group>"; };
+		7FA7080923EADDCE0092D4DD /* RestrictController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestrictController.swift; sourceTree = "<group>"; };
+		7FA7080B23EAE70F0092D4DD /* Restriction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restriction.swift; sourceTree = "<group>"; };
 		7FEBEB7223D0550800D04D83 /* Bienestapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bienestapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FEBEB7523D0550800D04D83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FEBEB7723D0550800D04D83 /* loginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginController.swift; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 				7F9CC01A23E836D5001D5447 /* mapController.swift */,
 				7F65E63023E9784E0076C24F /* showAppController.swift */,
 				7F65E63223E97D590076C24F /* appCell.swift */,
+				7FA7080923EADDCE0092D4DD /* RestrictController.swift */,
+				7FA7080B23EAE70F0092D4DD /* Restriction.swift */,
 			);
 			path = Bienestapp;
 			sourceTree = "<group>";
@@ -233,6 +239,7 @@
 				7F9CC01723E8163B001D5447 /* userController.swift in Sources */,
 				7F9CC01923E82AEE001D5447 /* changePassword.swift in Sources */,
 				7FEBEB8A23D0667800D04D83 /* User.swift in Sources */,
+				7FA7080A23EADDCE0092D4DD /* RestrictController.swift in Sources */,
 				7F91C48C23E038CB001678AE /* TableViewController.swift in Sources */,
 				7F65E63123E9784E0076C24F /* showAppController.swift in Sources */,
 				7F91C49223E04D77001678AE /* tableCell.swift in Sources */,
@@ -240,6 +247,7 @@
 				7FEBEB7823D0550800D04D83 /* loginController.swift in Sources */,
 				7FEBEB8823D0573F00D04D83 /* registerController.swift in Sources */,
 				7F65E63323E97D590076C24F /* appCell.swift in Sources */,
+				7FA7080C23EAE70F0092D4DD /* Restriction.swift in Sources */,
 				7FEBEB7623D0550800D04D83 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

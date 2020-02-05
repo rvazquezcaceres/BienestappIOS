@@ -45,6 +45,7 @@ class TableViewController: UITableViewController {
         
         if jsonUse != nil {
             cell.timeApp.text = (jsonUse![indexPath.row]["totalTime"]! as! String)
+            cell.dateApp.text = (jsonUse![indexPath.row]["day"]! as! String)
         }
         
         return cell
@@ -54,9 +55,13 @@ class TableViewController: UITableViewController {
         let nextScreen = segue.destination as! showAppController
         let cell = sender as! tableCell
         let nombre = cell.nameApp.text!
-        let imagenn = cell.imageApp.image!
+        let imagen = cell.imageApp.image!
+        let time = cell.timeApp.text!
+        let date = cell.dateApp.text!
         nextScreen.nombre = nombre
-        nextScreen.imagen = imagenn
+        nextScreen.imagen = imagen
+        nextScreen.time = time
+        nextScreen.date = date
     }
     
     

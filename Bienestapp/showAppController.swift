@@ -8,37 +8,29 @@
 
 import UIKit
 
-class showAppController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class showAppController: UIViewController {
     
-    var json: String = ""
-    var jsonUso: [[String:Any]]?
-    var numberJson = 0
     
     var nombre: String = ""
     var imagen: UIImage? = nil
+    var time: String = ""
+    var date: String = ""
     
     @IBOutlet weak var imageApp: UIImageView!
     @IBOutlet weak var nameApp: UILabel!
+    @IBOutlet weak var dateApp: UILabel!
+    @IBOutlet weak var timeApp: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         nameApp.text! = nombre
         imageApp.image = imagen
+        dateApp.text! = date
+        timeApp.text! = time
+        
     }
     
     @IBAction func backButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "id", for: indexPath)
-        
-        cell.backgroundColor = UIColor.blue
-        
-        return cell
     }
 }
