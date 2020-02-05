@@ -29,6 +29,7 @@ class TableViewController: UITableViewController {
         // Do any additional setup after loading the view.
     }
     
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return numberJson
     }
@@ -48,6 +49,17 @@ class TableViewController: UITableViewController {
         
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextScreen = segue.destination as! showAppController
+        let cell = sender as! tableCell
+        let nombre = cell.nameApp.text!
+        let imagenn = cell.imageApp.image!
+        nextScreen.nombre = nombre
+        nextScreen.imagen = imagenn
+    }
+    
+    
     
     func getUser() {
         let url = URL(string: "http://localhost:8888/Ruben/Bienestapp/public/index.php/api/mostrar")
