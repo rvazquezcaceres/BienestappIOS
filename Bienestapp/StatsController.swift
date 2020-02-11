@@ -1,24 +1,25 @@
 //
-//  TableViewController.swift
+//  StatsController.swift
 //  Bienestapp
 //
-//  Created by alumnos on 28/01/2020.
+//  Created by alumnos on 11/02/2020.
 //  Copyright © 2020 alumnos. All rights reserved.
 //
 
-import Alamofire
 import UIKit
+import Alamofire
 import AlamofireImage
 
-var table = tableCell()
-
-class TableViewController: UITableViewController {
+class StatsController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var json: [[String:Any]]?
     var jsonUse:[[String:Any]]?
-    
     var numberJson = 0
-
+    var time: [String] = ["day", "week", "month"]
+    
+    @IBOutlet weak var pickApp: UIPickerView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getApps()
@@ -26,16 +27,28 @@ class TableViewController: UITableViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.reloadData()
-        // Do any additional setup after loading the view.
+        self.pickApp.delegate = self
+        self.pickApp.dataSource = self
     }
     
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return time.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return time[row]
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return numberJson
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "id", for: indexPath) as! tableCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "id", for: indexPath) as! StatsCell
         
         if json != nil {
             let url = URL(string: json![indexPath.row]["icon"] as! String)
@@ -45,7 +58,6 @@ class TableViewController: UITableViewController {
         
         if jsonUse != nil {
             cell.timeApp.text = (jsonUse![indexPath.row]["totalTime"]! as! String)
-            cell.dateApp.text = (jsonUse![indexPath.row]["day"]! as! String)
         }
         
         return cell
@@ -64,8 +76,6 @@ class TableViewController: UITableViewController {
         nextScreen.date = date
     }
     
-    
-    
     func getApps() {
         let url = URL(string: "http://localhost:8888/Ruben/Bienestapp/public/index.php/api/mostrar")
         
@@ -76,7 +86,7 @@ class TableViewController: UITableViewController {
             if response.response!.statusCode == 201 {
                 self.json = response.result.value as! [[String: Any]]
                 self.numberJson = self.json!.count
-                self.tableView.reloadData()
+                self.pickApp.reloadAllComponents()
             } else {
                 let alert1 = UIAlertAction(title:"Cerrar", style: UIAlertAction.Style.default) {
                     (error) in
@@ -97,8 +107,8 @@ class TableViewController: UITableViewController {
         Alamofire.request(url!, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
             print(response.response!.statusCode)
             if response.response!.statusCode == 201 {
-               self.jsonUse = response.result.value as! [[String: Any]]
-               self.tableView.reloadData()
+                self.jsonUse = response.result.value as! [[String: Any]]
+                self.tableView.reloadData()
             } else {
                 let alert1 = UIAlertAction(title:"Cerrar", style: UIAlertAction.Style.default) {
                     (error) in
@@ -110,5 +120,4 @@ class TableViewController: UITableViewController {
             }
         }
     }
-    
 }

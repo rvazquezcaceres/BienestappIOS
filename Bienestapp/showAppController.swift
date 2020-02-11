@@ -25,8 +25,8 @@ class showAppController: UIViewController {
         super.viewDidLoad()
         nameApp.text! = nombre
         imageApp.image = imagen
-        dateApp.text! = date
-        timeApp.text! = time
+        dateApp.text! = "Fecha: " + date
+        timeApp.text! = "Tiempo acumulado: " + time + " segundos"
         
     }
     
